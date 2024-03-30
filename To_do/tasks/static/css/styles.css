@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.list-div {
+    min-height: calc(100vh);
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+/* Navbar */
+
+.navbar {
+    border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+}
+
+.navbar-nav {
+    margin: auto;
+}
+
+.navbar-brand {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav a.nav-link {
+    color: #333;
+    letter-spacing: 1px;
+    border-radius: 20px;
+}
+
+.nav-link:hover{
+    background-color: #e7e7e7;
+}
+
+/* Botao de adicinar */
+
+#add-link{
+    text-decoration: none;
+}
+
+.add-div {
+    background-color: #1357c4;
+    cursor: pointer;
+    display: inline-block;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 25px;
+}
+.fas .fa-plus {
+    color: #fff;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+/* Search */
+
+.search-div {
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Lista de tarefas */
+
+.list-div {
+    padding: 0;
+}
+
+.title {
+    text-decoration: none;
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.tesk-item {
+    list-style: none;
+    font-size: 20px;
+    height: 50px;
+    padding-top: 10px;
+    border-bottom: 1px dashed #dddddd;
+}
+
+.fas.fa-trash, .fas.fa-edit {
+    cursor: pointer;
+    margin: 5px;
+    font-size: 20px;
+    float: right;
+}
+
+.fas.fa-trash {
+    color: #db1e47;
+}
+
+.fas.fa-edit {
+    color: #13c43f;
+}
+
+/* Footer */
+
+footer {
+    background-color: #333;
+    height: 300px;
+    border-top: 2px solid #202020;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 50%;
+}

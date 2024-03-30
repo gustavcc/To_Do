@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}To do{% endblock %}
+
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Lista de Taferas</h1>
+    <a id="add-link" href="/newtask">
+        <div class="col-2 add-div">
+            <i class="fas fa-plus"></i> Adicionar Tarefa
+        </div>
+    </a>
+
+    <div class="col-9 search-div">
+        <input class="form-control" type="text" id="search" name="search" placeholder="Digite o Nome da Tarefa para Buscar... ">
+    </div>
+    <ul class="task-list">
+        {% for task in tasks %}
+        <li class="tesk-item">
+            <span><a class="title" href="/task/{{task.id}}">{{task.title}}</a></span>
+            <span><i class="fas fa-trash"></i></span>
+            <span><a href="/edit/{{task.id}}"><i class="fas fa-edit"></i></a></span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

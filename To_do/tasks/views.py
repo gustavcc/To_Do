@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Task
 from .forms import TaskForm
+from django.contrib import messages
 
 def taskList(request):
     tasks = Task.objects.all().order_by('-created_at')
@@ -38,3 +39,11 @@ def taskEdit(request, id):
             return render(request, 'tasks/taskedit.html', {'form': form, 'task': task})
     else:
         return render(request, 'tasks/taskedit.html', {'form': form, 'task': task})
+
+def taskDelete(request, id):
+    task = get_object_or_404(Task, pk=id)
+    task.delete()
+    
+    messages.info(request, 'Tarefa deletado com sucesso!')
+    
+    return redirect('/')

@@ -1,5 +1,5 @@
-// var click = document.querySelector('#click');
-
-// click.addEventListener('click', ()=>{
-//     console.log('Clicado!');
-// })
+${document}.ready(function() {
+    
+    console.log('Funcionou');
+    
+});

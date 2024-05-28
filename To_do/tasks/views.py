@@ -5,15 +5,24 @@ from .forms import TaskForm
 from django.contrib import messages
 
 def taskList(request):
-    # definir variavel com todos os objetos
-    tasks_list = Task.objects.all().order_by('-created_at')
-    # definir quabtos registros por pagina
-    paginator = Paginator(tasks_list, 3)
-    # numero da pagina ira vir atraves da url
-    page = request.GET.get('page')
-    # definir variavel final
-    tasks = paginator.get_page(page)
     
+    # search system
+    search = request.GET.get('search')
+    
+    if search:
+        
+        tasks = Task.objects.filter(title__icontains=search,description__icontains=search)
+    else:
+
+        # definir variavel com todos os objetos
+        tasks_list = Task.objects.all().order_by('-created_at')
+        # definir quabtos registros por pagina
+        paginator = Paginator(tasks_list, 5)
+        # numero da pagina ira vir atraves da url
+        page = request.GET.get('page')
+        # definir variavel final
+        tasks = paginator.get_page(page)
+        
     return render(request, 'tasks/list.html', {'tasks':tasks})
 
 def taskView(request, id):
